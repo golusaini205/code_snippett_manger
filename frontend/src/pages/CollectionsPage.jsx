@@ -9,7 +9,7 @@ const CollectionsPage = () => {
 
   const loadCollections = async () => {
     try {
-      const { data } = await api.get("/collections");
+      const { data } = await api.get("/api/collections");
       setCollections(data);
     } catch (err) {
       setError(err.response?.data?.message || "Could not load collections");
@@ -22,7 +22,7 @@ const CollectionsPage = () => {
 
   const onSubmit = async (values) => {
     try {
-      await api.post("/collections", values);
+      await api.post("/api/collections", values);
       reset();
       loadCollections();
     } catch (err) {
