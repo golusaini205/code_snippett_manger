@@ -17,7 +17,7 @@ const DashboardPage = () => {
       const params = {};
       if (language) params.language = language;
       if (activeTag) params.tags = activeTag;
-      const { data } = await api.get("/snippets", { params });
+      const { data } = await api.get("/api/snippets", { params });
       setSnippets(data);
     } catch (err) {
       setError(err.response?.data?.message || "Could not load snippets");
