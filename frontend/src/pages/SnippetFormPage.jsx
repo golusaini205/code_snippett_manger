@@ -18,9 +18,9 @@ const SnippetFormPage = () => {
       isPublic: Boolean(values.isPublic),
     };
     try {
-      const { data } = await api.post("/snippets", payload);
+      const { data } = await api.post("/api/snippets", payload);
       reset();
-      navigate(`/snippets/${data._id}`);
+      navigate(`/api/snippets/${data._id}`);
     } catch (err) {
       setError(err.response?.data?.message || "Could not save snippet");
     }
