@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <Link to="/dashboard" className="logo">
-        Snippet Vault
+        Snippet Vault(chirag saini)
       </Link>
       <div className="nav-links">
         {user && (
