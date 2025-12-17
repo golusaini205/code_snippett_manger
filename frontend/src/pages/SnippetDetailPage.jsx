@@ -14,7 +14,7 @@ const SnippetDetailPage = () => {
   const fetchSnippet = async () => {
     setError("");
     try {
-      const { data } = await api.get(`/snippets/${id}`);
+      const { data } = await api.get(`/api/snippets/${id}`);
       setSnippet(data);
     } catch (err) {
       setError(err.response?.data?.message || "Could not load snippet");
@@ -27,7 +27,7 @@ const SnippetDetailPage = () => {
 
   const runPreview = async () => {
     try {
-      const { data } = await api.get(`/snippets/${id}/preview`);
+      const { data } = await api.get(`/api/snippets/${id}/preview`);
       setPreview(data);
     } catch (err) {
       setError(err.response?.data?.message || "Preview failed");
@@ -36,7 +36,7 @@ const SnippetDetailPage = () => {
 
   const forkSnippet = async () => {
     try {
-      const { data } = await api.post(`/snippets/${id}/fork`);
+      const { data } = await api.post(`/api/snippets/${id}/fork`);
       navigate(`/snippets/${data._id}`);
     } catch (err) {
       setError(err.response?.data?.message || "Could not fork");
@@ -45,7 +45,7 @@ const SnippetDetailPage = () => {
 
   const deleteSnippet = async () => {
     try {
-      await api.delete(`/snippets/${id}`);
+      await api.delete(`/api/snippets/${id}`);
       navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Delete failed");
