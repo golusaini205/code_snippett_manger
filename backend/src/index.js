@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 // Allow multiple origins for CORS
 const allowedOrigins = process.env.CLIENT_ORIGIN 
   ? process.env.CLIENT_ORIGIN.split(',').map(origin => origin.trim())
-  : ["http://localhost:5173", "https://snippet-manager.onrender.com"];
+  : ["http://localhost:5173", "https://snippet-manger.onrender.com"];
 
 app.use(
   cors({
